@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ResumeSubmission{% endblock %}
+
+{% block body %}
+    <h1>ResumeSubmission</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ resume_submission.id }}</td>
+            </tr>
+            <tr>
+                <th>SubmissionDate</th>
+                <td>{{ resume_submission.submissionDate ? resume_submission.submissionDate|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>CompanyName</th>
+                <td>{{ resume_submission.companyName }}</td>
+            </tr>
+            <tr>
+                <th>PositiveFeedback</th>
+                <td>{{ resume_submission.positiveFeedback ? 'Yes' : 'No' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_resume_submission_index') }}">back to list</a>
+
+    <a href="{{ path('app_resume_submission_edit', {'id': resume_submission.id}) }}">edit</a>
+
+    {{ include('resume_submission/_delete_form.html.twig') }}
+{% endblock %}

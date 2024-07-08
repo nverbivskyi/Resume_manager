@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New ResumeSubmission{% endblock %}
+
+{% block body %}
+    <h1>Create new ResumeSubmission</h1>
+
+    {{ include('resume_submission/_form.html.twig') }}
+
+    <a href="{{ path('app_resume_submission_index') }}">back to list</a>
+{% endblock %}
